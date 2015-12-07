@@ -1,0 +1,9 @@
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+{% for cssFile in files %}
+    <link href="{{ cssFile }}" rel="stylesheet" type="text/css" />
+{% endfor %}
+
+<script data-main="js/main" src="js/ext/require.js"></script>
+{% include 'CoreBundle:default:menu.html.twig' %}
+<div data-bind='template: { name: "menu-template", data: menuViewModel }'></div>
+<div data-bind='template: { name: mainTemplateName, data: mainTemplateViewModel }'></div>

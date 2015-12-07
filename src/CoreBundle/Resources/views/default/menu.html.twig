@@ -1,0 +1,7 @@
+<script type="text/html" id="menu-template">
+    <div class="menuArea">
+        <!-- ko foreach: menuEntries -->
+            <div class="menuEntry" data-bind="click: selectEntry, text: content, css: {'menuEntry--selected': isSelected}"></div>
+        <!-- /ko -->
+    </div>
+</script>

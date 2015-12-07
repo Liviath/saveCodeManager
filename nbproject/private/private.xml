@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/var/www/html/saveCodeManager/app/config/parameters.yml</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/config/doctrine/Users.orm.yml</file>
+            <file>file:/var/www/html/saveCodeManager/web/css/Menu.css</file>
+            <file>file:/var/www/html/saveCodeManager/web/app_dev.php</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/views/default/menu.html.twig</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Controller/SecurityController.php</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Controller/UserController.php</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/views/default/mainTemplate.html.twig</file>
+            <file>file:/var/www/html/saveCodeManager/web/css/MainContent.css</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/views/default/index.html.twig</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Utils/RecursiveFileNameReader.php</file>
+            <file>file:/var/www/html/saveCodeManager/web/app.php</file>
+            <file>file:/var/www/html/saveCodeManager/web/js/Utils/Network.js</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/config/routing.yml</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Controller/DefaultController.php</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Entity/Users.php</file>
+            <file>file:/var/www/html/saveCodeManager/app/config/config.yml</file>
+            <file>file:/var/www/html/saveCodeManager/web/css/Reset.css</file>
+            <file>file:/var/www/html/saveCodeManager/web/js/Utils/Security.js</file>
+            <file>file:/var/www/html/saveCodeManager/web/js/main.js</file>
+        </group>
+    </open-files>
+</project-private>

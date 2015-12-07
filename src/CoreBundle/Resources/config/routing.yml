@@ -1,0 +1,12 @@
+core_homepage:
+    path:     /
+    defaults: { _controller: CoreBundle:Default:index }
+    
+security:
+    path:     /security
+    defaults: { _controller: CoreBundle:Security:security }
+    
+postUser:
+    path:     /user
+    defaults: { _controller: CoreBundle:User:post }
+    methods: [POST]

@@ -1,0 +1,20 @@
+.menuArea {
+    background-color: #0059b3;
+    height: 50px;
+}
+
+.menuEntry {
+    width: 250px;
+    height: 50px;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    display: inline-block;
+    background-color: #004b99;
+    cursor: pointer;
+}
+
+.menuEntry--selected {
+    background-color: #003366;
+}

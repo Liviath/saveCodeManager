@@ -1,0 +1,3 @@
+login:
+    viewModel: Tasks/Login
+    templateId: login-template

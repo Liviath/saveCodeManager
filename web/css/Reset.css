@@ -1,0 +1,19 @@
+html, body {margin:0px; padding:0px;}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+div {
+    font-size: 18px;
+}
+
+u-font-bold {
+    font-weight: 700;
+}
+
+.headline {
+    font-size: 21px;
+    color: lightblue;
+    
+}
