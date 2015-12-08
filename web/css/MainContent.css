@@ -1,6 +1,6 @@
 .mainContent {
     left: 10%;
-    right: 10%;
     top: 5%;
+    width: 80%;
     position: relative;
 }

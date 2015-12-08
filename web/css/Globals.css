@@ -1,0 +1,16 @@
+.error {
+    color: red;
+    font-style: italic;
+}
+
+.button {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #0059b3;
+    color: white;
+    line-height: 25px;
+    height: 25px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}

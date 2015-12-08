@@ -1,0 +1,29 @@
+<script type="text/html" id="register-template">
+    <div class='headline' data-bind='text: title'></div>
+    <br/>
+    
+    <div class='register-labelWidth u-inline-block'>Username</div>
+    <input class='register-inputWidth' type='text' data-bind='textInput: name'/>
+    <!-- ko ifnot: validateName -->
+        <div class='error register-error u-inline-block'>The username has to contain between 3 and 16 characters and can only consist of letters and numbers.</div>
+    <!-- /ko -->
+    <br/>
+    
+    <div class='register-labelWidth u-inline-block'>Password</div>
+    <input class='register-inputWidth' type='password' data-bind='textInput: password'/>
+    <!-- ko ifnot: validatePassword -->
+        <div class='error register-error u-inline-block'>The password has to contain between 6 and 32 characters.</div>
+    <!-- /ko -->
+    <br/>
+    
+    <div class='register-labelWidth u-inline-block'>Confirm Password</div>
+    <input class='register-inputWidth' type='password' data-bind='textInput: passwordConfirmation'/>
+    <!-- ko ifnot: validatePasswordConfirmation -->
+        <div class='error register-error u-inline-block'>The passwords are not equal.</div>
+    <!-- /ko -->
+    <br/>
+    <br/>
+    <div class='error' data-bind='text: errorMessage'></div>
+    
+    <div class="button register-submit" data-bind='enable: isValidated, click: createUser'>Register</div>
+</script>

@@ -1,13 +1,20 @@
 define('Utils/Security', ['Utils/Network'], function(Network) {
     var isAuthentificated;
     
-    function isLoggedIn() {
-        return isAuthentificated;
-    }
-    
-    Network.getRequest('security').done(function(data) {
-//        alert(data);
+    var promise = Network.getRequest('security').done(function(data) {
+        isAuthentificated = data;
     });
+    
+    function isLoggedIn(callback) {
+        if(!isAuthentificated) {
+            promise.then(function(data) {
+                isAuthentificated = data;
+                callback(data);
+            });
+        } else {
+            callback(isAuthentificated);
+        }
+    }
     
     return {
         isLoggedIn: isLoggedIn

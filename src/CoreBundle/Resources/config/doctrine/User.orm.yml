@@ -1,4 +1,4 @@
-CoreBundle\Entity\Users:
+CoreBundle\Entity\User:
     type: entity
     table: users
     uniqueConstraints:
@@ -21,19 +21,19 @@ CoreBundle\Entity\Users:
         name:
             type: string
             nullable: false
-            length: 45
+            length: 16
             options:
                 fixed: false
         password:
             type: string
             nullable: false
-            length: 45
+            length: 32
             options:
                 fixed: false
         salt:
             type: string
             nullable: false
-            length: 45
+            length: 64
             options:
                 fixed: false
         timestamp:

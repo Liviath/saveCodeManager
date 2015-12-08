@@ -5,22 +5,30 @@ define('Utils/Network', ['jquery'], function($) {
      * Sends a GET request to a specific url.
      * @param {String} url
      * @param {Object} data
+     * @param {Function} callback
      * @returns {jqXHR}
      */
-    function getRequest(url, data) {
+    function getRequest(url, data, callback) {
         url = preprocessUrl(url);
-        return $.get(url, data);
+        return $.get(url, data, function(message, type, xhrRequest) {
+            if(callback) {
+                callback(message, xhrRequest.status);
+            }
+        });
     }
     
     /**
      * Sends a POST request to a specific url.
      * @param {String} url
      * @param {Object} data
+     * @param {Function} callback
      * @returns {jqXHR}
      */
-    function postRequest(url, data) {
+    function postRequest(url, data, callback) {
         url = preprocessUrl(url);
-        return $.post(url, data);
+        return $.post(url, data, function(message, type, xhrRequest) {
+            callback(message, xhrRequest.status);
+        });
     }
     
     /**

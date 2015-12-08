@@ -1,0 +1,16 @@
+<script type="text/html" id="login-template">
+    <div class='headline'>Login</div>
+    <br/>
+    
+    <div class='register-labelWidth u-inline-block'>Username</div>
+    <input class='register-inputWidth' type='text' data-bind='textInput: name'/>
+    <br/>
+    
+    <div class='register-labelWidth u-inline-block'>Password</div>
+    <input class='register-inputWidth' type='password' data-bind='textInput: password'/>
+    <br/>
+    <br/>
+    <div class='error' data-bind='text: errorMessage'></div>
+    
+    <div class="button register-submit" data-bind='click: login'>Login</div>
+</script>

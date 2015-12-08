@@ -4,6 +4,11 @@
 {% endfor %}
 
 <script data-main="js/main" src="js/ext/require.js"></script>
-{% include 'CoreBundle:default:menu.html.twig' %}
+{% include 'CoreBundle:default:Includes.html.twig' %}
 <div data-bind='template: { name: "menu-template", data: menuViewModel }'></div>
-<div data-bind='template: { name: mainTemplateName, data: mainTemplateViewModel }'></div>
+<div class='mainContent' data-bind='ifnot: isLoading()'>
+    <div data-bind='template: { name: mainTemplateName(), data: mainTemplateViewModel() }'></div>
+</div>
+<div id='dialogArea' style='display: none'>
+        {% include 'CoreBundle:default:dialog.html.twig' %}
+</div>

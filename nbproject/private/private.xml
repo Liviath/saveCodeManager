@@ -3,26 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/saveCodeManager/app/config/parameters.yml</file>
-            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/config/doctrine/Users.orm.yml</file>
-            <file>file:/var/www/html/saveCodeManager/web/css/Menu.css</file>
-            <file>file:/var/www/html/saveCodeManager/web/app_dev.php</file>
-            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/views/default/menu.html.twig</file>
-            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Controller/SecurityController.php</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/config/doctrine/User.orm.yml</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/config/services.yml</file>
+            <file>file:/var/www/html/saveCodeManager/web/css/Globals.css</file>
+            <file>file:/var/www/html/saveCodeManager/web/js/Tasks/Register.js</file>
+            <file>file:/var/www/html/saveCodeManager/web/css/Register.css</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Generator/Password.php</file>
             <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Controller/UserController.php</file>
-            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/views/default/mainTemplate.html.twig</file>
-            <file>file:/var/www/html/saveCodeManager/web/css/MainContent.css</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Entity/User.php</file>
             <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/views/default/index.html.twig</file>
-            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Utils/RecursiveFileNameReader.php</file>
-            <file>file:/var/www/html/saveCodeManager/web/app.php</file>
             <file>file:/var/www/html/saveCodeManager/web/js/Utils/Network.js</file>
             <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/config/routing.yml</file>
-            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Controller/DefaultController.php</file>
-            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Entity/Users.php</file>
-            <file>file:/var/www/html/saveCodeManager/app/config/config.yml</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Generator/Hash.php</file>
             <file>file:/var/www/html/saveCodeManager/web/css/Reset.css</file>
-            <file>file:/var/www/html/saveCodeManager/web/js/Utils/Security.js</file>
-            <file>file:/var/www/html/saveCodeManager/web/js/main.js</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/views/default/Register.html.twig</file>
+            <file>file:/var/www/html/saveCodeManager/web/js/Utils/Routing.js</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Controller/BaseController.php</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Controller/ConfigController.php</file>
+            <file>file:/var/www/html/saveCodeManager/web/css/Utils.css</file>
         </group>
     </open-files>
 </project-private>

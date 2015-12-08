@@ -11,7 +11,7 @@ class SecurityController extends Controller {
      * Checks if the user is logged in.
      * @return JsonResponse
      */
-    public function securityAction() {
-        return new JsonResponse(false);
+    public function securityAction(\Symfony\Component\HttpFoundation\Request $request) {
+        return new JsonResponse($request->getSession()->get('userId') ? true : false);
     }
 }

@@ -1,0 +1,12 @@
+<script type="text/html" id="game-overview-template">
+    <div class="game-area"> 
+        <!-- ko ifnot: isLoading -->
+            <!-- ko if: isEmpty -->
+                <div>There are currently no games added.</div>
+            <!-- /ko -->
+        <!-- /ko -->
+    </div>
+    <div class="game-additionalControlls">
+        <div class="button" data-bind="click: openAddGameDialog">Add Game</div>
+    </div>
+</script>

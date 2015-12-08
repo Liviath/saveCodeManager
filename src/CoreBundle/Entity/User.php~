@@ -3,9 +3,9 @@
 namespace CoreBundle\Entity;
 
 /**
- * Users
+ * User
  */
-class Users
+class User
 {
     /**
      * @var integer
@@ -48,7 +48,7 @@ class Users
      *
      * @param string $name
      *
-     * @return Users
+     * @return User
      */
     public function setName($name)
     {
@@ -72,7 +72,7 @@ class Users
      *
      * @param string $password
      *
-     * @return Users
+     * @return User
      */
     public function setPassword($password)
     {
@@ -96,7 +96,7 @@ class Users
      *
      * @param string $salt
      *
-     * @return Users
+     * @return User
      */
     public function setSalt($salt)
     {
@@ -120,7 +120,7 @@ class Users
      *
      * @param \DateTime $timestamp
      *
-     * @return Users
+     * @return User
      */
     public function setTimestamp($timestamp)
     {
@@ -139,3 +139,4 @@ class Users
         return $this->timestamp;
     }
 }
+

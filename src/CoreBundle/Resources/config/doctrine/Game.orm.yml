@@ -1,0 +1,40 @@
+CoreBundle\Entity\Game:
+    type: entity
+    table: games
+    uniqueConstraints:
+        id_UNIQUE:
+            columns:
+                - id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+        userId:
+            type: integer
+            nullable: false
+            name: user_id
+            options:
+                unsigned: false
+        amountOfSaveCodes:
+            type: string
+            nullable: false
+            length: 255
+            name: amount_of_save_codes
+            options:
+                fixed: false
+    manyToOne:
+        user:
+            targetEntity: User
+    lifecycleCallbacks: {  }

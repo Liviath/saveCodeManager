@@ -1,0 +1,12 @@
+<!-- ko with: dialogManager -->
+    <!-- ko if: isOpened -->
+        <div class="dialog-overlay">
+            <div class="dialog-area dialog--size-s">
+                <div class='dialog-content'>
+                    <div class="dialog-close-icon" data-bind="click: closeDialog">X</div>
+                    <div data-bind='template: { name: dialogTemplateId(), data: dialogViewModel() }'></div>
+                </div>
+            </div>
+        </div>
+    <!-- /ko -->
+<!-- /ko -->

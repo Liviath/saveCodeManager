@@ -19,32 +19,44 @@ define('Tasks/MenuHandler', ['knockout', 'Utils/Security', 'Utils/EventManager']
     };
     
     // Initializes the menu entries.    
-    if(!Security.isLoggedIn()) {
-        var menuEntries = [
-            new menuEntry('Login', 'login-template'),
-            new menuEntry('Register', 'register-template')
-        ];
-    } else {
-        var menuEntries = [
-            new menuEntry('Home')
-        ];
-    }
     
-    menuEntries[0].isSelected(true);
-    EventManager.trigger('mainTemplateChanged', menuEntries[0].content);
     
     var menuViewModel = function() {
-        this.menuEntries = menuEntries;
+        this.isLoading = ko.observable(true);
+        this.menuEntries = [];
         
         EventManager.subscribe('mainTemplateChanged', 'menu', function(selectedEntry) {
            for(var entry in this.menuEntries) {
                if(this.menuEntries.hasOwnProperty(entry)) {
-                   var isSelected = (this.menuEntries[entry].content === selectedEntry);
+                   var isSelected = (this.menuEntries[entry].templateId === selectedEntry);
                    this.menuEntries[entry].isSelected(isSelected);
                }
            }
         }.bind(this));
+        this.initMenuEntries();
     };
+    
+    menuViewModel.prototype = {
+        initMenuEntries: function() {
+            var self = this;
+            Security.isLoggedIn(function(isLoggedIn) {
+                if(!isLoggedIn) {
+                    self.menuEntries = [
+                        new menuEntry('Login', 'login-template'),
+                        new menuEntry('Register', 'register-template')
+                    ];
+                } else {
+                    self.menuEntries = [
+                        new menuEntry('Home', 'home-template'),
+                        new menuEntry('Games', 'game-overview-template'),
+                        new menuEntry('Logout', 'logout-template')
+                    ];
+                }
+                EventManager.trigger('mainTemplateChanged', self.menuEntries[0].templateId);
+                self.isLoading(false);
+            });
+        }
+    }
     
     return menuViewModel;
 });

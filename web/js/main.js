@@ -7,13 +7,47 @@ requirejs.config({
     }
 });
 
-define('main', ['knockout', 'Utils/Security', 'Tasks/MenuHandler'], function(ko, Security, MenuViewModel) {
+define('main', [
+    'knockout',
+    'Tasks/MenuHandler', 
+    'Utils/Routing',
+    'Utils/EventManager',
+    'Manager/DialogManager'
+], function(ko, MenuViewModel, Routing, EventManager, DialogManager) {
+    
+    /**
+     * Handles the main models ( menu, main content )
+     */
     var mainViewModel = function() {
+        this.isLoading = ko.observable(true);
         this.menuViewModel = new MenuViewModel();
-        this.test = 'abc';
+        this.mainTemplateViewModel = ko.observable({});
+        this.mainTemplateName = ko.observable('');
+        this.mainTemplateName.subscribe(function(value){console.log(value);});
+        this.dialogManager = new DialogManager();
+        
+        EventManager.subscribe('mainTemplateChanged', 'main', function(templateId) {
+           this.changeMainContent(templateId);
+        }.bind(this));
+        
     };
     
-    var mainTemplateName = ko.observable('template-login');
-    var mainTemplateViewModel = ko.observable();
+    mainViewModel.prototype = {
+        
+        /**
+         * Changes the main content area according to the new template id
+         * @param {String} templateId
+         */
+        changeMainContent: function(templateId) {
+            this.isLoading(true);
+            var self = this;
+            Routing.getModuleByTemplateId(templateId, function(viewModel) {
+                self.mainTemplateViewModel(viewModel);
+                self.mainTemplateName(templateId);
+                self.isLoading(false);
+            });
+        }
+    };
+    
     ko.applyBindings(new mainViewModel());
 });

@@ -10,3 +10,18 @@ postUser:
     path:     /user
     defaults: { _controller: CoreBundle:User:post }
     methods: [POST]
+    
+login:
+    path:     /login
+    defaults: { _controller: CoreBundle:User:login }
+    methods: [POST]
+    
+logout:
+    path:     /logout
+    defaults: { _controller: CoreBundle:User:logout }
+    methods: [GET]
+    
+getConfig:
+    path:     /config
+    defaults: { _controller: CoreBundle:Config:getConfig }
+    methods: [GET]

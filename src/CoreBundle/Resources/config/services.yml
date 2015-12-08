@@ -1,4 +1,4 @@
 services:
-#    core.example:
-#        class: CoreBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+#    core.session_manager:
+#        class: CoreBundle\Manager\SessionManager
+#        arguments: []

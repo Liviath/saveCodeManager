@@ -1,5 +1,9 @@
 html, body {margin:0px; padding:0px;}
 
+div input {
+    margin-top: 5px;
+}
+
 body {
     font-family: 'Roboto Condensed', sans-serif;
 }
@@ -13,7 +17,6 @@ u-font-bold {
 }
 
 .headline {
-    font-size: 21px;
+    font-size: 32px;
     color: lightblue;
-    
 }
