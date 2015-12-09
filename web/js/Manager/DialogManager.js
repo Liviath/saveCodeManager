@@ -13,6 +13,10 @@ define('Manager/DialogManager', [
            this.openDialogByTemplateId(templateId);
         }.bind(this));
         
+        EventManager.subscribe('closeDialog', 'manager', function() {
+            this.closeDialog();
+        }.bind(this))
+        
         document.getElementById('dialogArea').removeAttribute('style');
     };
     
@@ -25,7 +29,7 @@ define('Manager/DialogManager', [
         openDialogByTemplateId: function(templateId) {
             var self = this;
             Routing.getModuleByTemplateId(templateId, function(viewModel) {
-                self.dialogTemplateId(viewModel);
+                self.dialogViewModel(viewModel);
                 self.dialogTemplateId(templateId);
                 self.isOpened(true);
             });

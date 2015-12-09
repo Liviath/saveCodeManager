@@ -1,0 +1,28 @@
+<div class='game-listEntry' data-bind="text: name, css: {'game-listEntry--selected': isSelected}, click: select">
+</div>
+<div class='button game-listEntry-addButton' data-bind='click: toggleAddCode'>add</div>
+<!-- ko if: addCode -->
+    <br/>
+    <div class='game-saveCode-newLabelWidth'>Description: </div>
+    <input type='text' class='game-saveCode-newInput' data-bind='value: newDescription'>
+    <br/>
+    <div class='game-saveCode-newLabelWidth'>Code: </div>
+    <input type='text' class='game-saveCode-newInput' data-bind='value: newCode'>
+    <br/>
+    
+    <div class='button game-saveCode-saveButton' data-bind='click: saveCode'>Save</div>
+    <br/>
+<!-- /ko -->
+<!-- ko if: isSelected -->
+    <!-- ko ifnot: isLoading -->
+        <!-- ko foreach: items -->
+            <br/>
+            <div class='game-code-description'>
+                <div class='game-code-content' data-bind='text: description'></div>
+            </div>
+            <div class='game-code-description'>
+                <div class='game-code-content' data-bind='text: code, click: selectCode, attr: {id: id}'></div>
+            </div>
+        <!-- /ko -->
+    <!-- /ko -->
+<!-- /ko -->

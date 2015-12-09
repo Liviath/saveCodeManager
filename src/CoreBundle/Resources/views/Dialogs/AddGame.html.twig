@@ -1,3 +1,19 @@
 <script type="text/html" id="dialog-add-game-template">
-    ADD A GAME!
+    <div class="headline">Add a game!</div>
+    <br/>
+    <div class="dialog-addGame-labelWidth u-inline-block">Name</div>
+    <input class="u-inline-block" type="text" data-bind='textInput: name'/>
+    <br/>
+    <br/>
+    <div class="dialog-addGame-labelWidth u-inline-block"> Amount of codes for each save</div>
+    <br/>
+    <input id="dialog-addGame-one" name="dialog-addGame" type="radio" value="1" data-bind='checked: amountOfSaveCodes'>
+    <label for='dialog-addGame-one'>1</label>
+    <br/>
+    <input id="dialog-addGame-two" name="dialog-addGame" type="radio" value="2" data-bind='checked: amountOfSaveCodes'>
+    <label for='dialog-addGame-two'>2</label>
+    <br/>
+    <div class='error' data-bind='text: errorMessage'></div>
+    <br/>
+    <div class='button' data-bind='click: createGame'>Create game</div>
 </script>

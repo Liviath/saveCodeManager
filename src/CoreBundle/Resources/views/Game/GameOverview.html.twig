@@ -4,6 +4,11 @@
             <!-- ko if: isEmpty -->
                 <div>There are currently no games added.</div>
             <!-- /ko -->
+            <!-- ko ifnot: isEmpty -->
+                <!-- ko foreach: items -->
+                    {% include 'CoreBundle:Game:Game.html.twig' %}
+                <!-- /ko -->
+            <!-- /ko -->
         <!-- /ko -->
     </div>
     <div class="game-additionalControlls">

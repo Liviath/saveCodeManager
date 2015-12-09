@@ -1,6 +1,7 @@
 CoreBundle\Entity\Game:
     type: entity
     table: games
+    repositoryClass: CoreBundle\Repository\Game
     uniqueConstraints:
         id_UNIQUE:
             columns:

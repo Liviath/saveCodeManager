@@ -5,3 +5,82 @@
 .game-additionalControlls {
     height: 5%;
 }
+
+.game-listEntry {
+    height: 31px;
+    line-height: 31px;
+    border-radius: 1px;
+    border-style: solid;
+    border-color: grey;
+    width: 50%;
+    cursor: pointer;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.game-listEntry--selected {
+    background-color: #e6e6e6;
+}
+
+.game-listEntry::before {
+    content: '+';
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 10px;
+    display: inline-block;
+}
+
+.game-listEntry-addButton .button {
+    height: 31px;
+    line-height: 31px;
+    display: inline-block;
+}
+
+.game-listEntry--selected::before {
+    content: '-';
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 10px;
+    display: inline-block;
+}
+
+.game-saveCode-newLabelWidth {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+}
+
+.game-saveCode-newInput {
+    display: inline-block;
+    width: 350px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.game-saveCode-saveButton {
+    width: 330px;
+    margin-left: 174px;
+    margin-bottom: 15px;
+}
+
+.game-code-description {
+    height: 21px;
+    line-height: 21px;
+    border-radius: 1px;
+    border-style: solid;
+    border-color: grey;
+    width: 24.7%;
+    cursor: pointer;
+    margin-top: 0px;
+    margin-bottom: 1px;
+    display: inline-block;
+    background-color: #ffffb3;
+    vertical-align: middle;
+}
+
+.game-code-content {
+    margin-left: 10px;
+    overflow-x: hidden;
+    max-height: 21px;
+}

@@ -25,3 +25,23 @@ getConfig:
     path:     /config
     defaults: { _controller: CoreBundle:Config:getConfig }
     methods: [GET]
+    
+postGame:
+    path:     /game
+    defaults: { _controller: CoreBundle:Game:post }
+    methods: [POST]
+    
+getGames:
+    path:     /game/all
+    defaults: { _controller: CoreBundle:Game:get }
+    methods: [GET]
+    
+getCodes:
+    path:     /code/all
+    defaults: { _controller: CoreBundle:Code:get }
+    methods: [GET]
+    
+postCodes:
+    path:     /code
+    defaults: { _controller: CoreBundle:Code:post }
+    methods: [POST]

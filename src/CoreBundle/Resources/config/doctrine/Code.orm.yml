@@ -1,14 +1,11 @@
-CoreBundle\Entity\User:
+CoreBundle\Entity\Code:
     type: entity
-    table: users
-    repositoryClass: CoreBundle\Repository\User
+    table: codes
+    repositoryClass: CoreBundle\Repository\Code
     uniqueConstraints:
         id_UNIQUE:
             columns:
                 - id
-        name_UNIQUE:
-            columns:
-                - name
     id:
         id:
             type: integer
@@ -19,25 +16,26 @@ CoreBundle\Entity\User:
             generator:
                 strategy: IDENTITY
     fields:
-        name:
-            type: string
-            nullable: false
-            length: 16
-            options:
-                fixed: false
-        password:
-            type: string
-            nullable: false
-            length: 32
-            options:
-                fixed: false
-        salt:
+        description:
             type: string
             nullable: false
             length: 64
             options:
                 fixed: false
-        timestamp:
-            type: datetime
-            nullable: true
+        gameId:
+            type: integer
+            nullable: false
+            name: game_id
+            options:
+                unsigned: false
+        code:
+            type: string
+            nullable: false
+            length: 255
+            name: code
+            options:
+                fixed: false
+    manyToOne:
+        game:
+            targetEntity: Game
     lifecycleCallbacks: {  }
