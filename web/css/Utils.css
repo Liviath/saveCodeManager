@@ -1,3 +1,10 @@
 .u-inline-block {
     display: inline-block;
 }
+
+.u-selectable {
+    -webkit-user-select: text; /* webkit (safari, chrome) browsers */
+    -moz-user-select: text; /* mozilla browsers */
+    -khtml-user-select: text; /* webkit (konqueror) browsers */
+    -ms-user-select: text; /* IE10+ */
+}

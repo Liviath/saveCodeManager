@@ -42,8 +42,7 @@ define('Tasks/Game/Code', ['knockout', 'Utils/Network'], function(ko, Network) {
         selectCode: function() {
             SelectText(this.id);
             try {
-                var copyEvent = new ClipboardEvent('copy', { dataType: 'text/plain', data: 'My string' } );
-                document.dispatchEvent(copyEvent);
+                document.execCommand('copy');
             } catch (err) {
                 console.log('The browser does not support document.execCommand', err);
             }
