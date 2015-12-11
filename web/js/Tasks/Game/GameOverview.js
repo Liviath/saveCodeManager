@@ -20,19 +20,27 @@ define('Tasks/Game/GameOverview', [
     };
     
     GameOverview.prototype = {
+        
+        /**
+         * Opens the dialog to add a game
+         */
         openAddGameDialog: function() {
             EventManager.trigger('openDialog', 'dialog-add-game-template');
         },
         
+        /**
+         * Refreshes the view data.
+         */
         refreshItems: function() {
-            this.items([]);
             var self = this;
             Network.getRequest('game/all', {}, function(data) {
+                var newItems = [];
                 for(var item in data) {
                     if(data.hasOwnProperty(item)) {
-                        self.items.push(new Game(data[item]));
+                        newItems.push(new Game(data[item]));
                     }
                 }
+                self.items(newItems);
                 self.isLoading(false);
             });
         }

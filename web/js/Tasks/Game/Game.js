@@ -1,4 +1,4 @@
-define('Tasks/Game/Game', ['knockout', 'Utils/Network', 'Tasks/Game/Code'], function(ko, Network, Code) {
+define('Tasks/Game/Game', ['knockout', 'Utils/Network', 'Utils/EventManager', 'Tasks/Game/Code'], function(ko, Network, EventManager, Code) {
     
     var Game = function(data) {
         this.name = data.name;
@@ -14,6 +14,10 @@ define('Tasks/Game/Game', ['knockout', 'Utils/Network', 'Tasks/Game/Code'], func
     };
     
     Game.prototype = {
+        
+        /**
+         * Selects a game
+         */
         select: function() {
             this.isSelected(!this.isSelected());
             if(!this.isSelected()) {
@@ -21,11 +25,17 @@ define('Tasks/Game/Game', ['knockout', 'Utils/Network', 'Tasks/Game/Code'], func
             }
         },
         
+        /**
+         * Shows or hides the add code field
+         */
         toggleAddCode: function() {
             this.addCode(!this.addCode());
-            this.isSelected(this.addCode());
+            this.isSelected(true);
         },
         
+        /**
+         * Saves a new code
+         */
         saveCode: function() {
             var data = {
                 description: this.newDescription(),
@@ -36,23 +46,28 @@ define('Tasks/Game/Game', ['knockout', 'Utils/Network', 'Tasks/Game/Code'], func
             Network.postRequest('code', data, function(data, code) {
                 if(code === 204) {
                     self.addCode(false);
+                    self.refresh();
                 }
             });
         },
         
+        /**
+         * Refreshes the items in the game.
+         */
         refresh: function() {
             var data = {
                 gameId: this.gameId
             };
             var self = this;
             Network.getRequest('code/all', data, function(data) {
+                var items = [];
                 for(var item in data) {
                     if(data.hasOwnProperty(item)) {
-                        self.items.push(new Code(data[item]));
+                        items.push(new Code(data[item]));
                     }
                 }
+                self.items(items);
                 self.isLoading(false);
-                console.log(self.items());
             });
         }
     };

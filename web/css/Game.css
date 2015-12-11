@@ -79,8 +79,13 @@
     vertical-align: middle;
 }
 
+.game-code-description-edit {
+    width: 25%;
+}
+
 .game-code-content {
     margin-left: 10px;
     overflow-x: hidden;
     max-height: 21px;
+    background-color: white;
 }

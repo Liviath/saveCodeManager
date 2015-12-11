@@ -1,6 +1,29 @@
 <div class='game-listEntry' data-bind="text: name, css: {'game-listEntry--selected': isSelected}, click: select">
 </div>
 <div class='button game-listEntry-addButton' data-bind='click: toggleAddCode'>add</div>
+<!-- ko if: isSelected -->
+    <!-- ko ifnot: isLoading -->
+        <!-- ko foreach: items -->
+            <!-- ko if: visible -->
+                <br/>
+                <!-- ko ifnot: isEditMode -->
+                    <div class='game-code-description'>
+                        <div class='game-code-content' data-bind='text: description'></div>
+                    </div>
+                    <div class='game-code-description'>
+                        <div class='game-code-content' data-bind='text: code, click: selectCode, attr: {id: id}'></div>
+                    </div>
+                    <div class='button game-listEntry-addButton' data-bind='click: edit'>edit</div>
+                <!-- /ko -->
+                <!-- ko if: isEditMode -->
+                    <input class='game-code-description-edit' data-bind='value: description'/>
+                    <input class='game-code-description-edit' data-bind='value: code'/>
+                    <div class='button game-listEntry-addButton' data-bind='click: save'>save</div>
+                <!-- /ko -->
+            <!-- /ko -->
+        <!-- /ko -->
+    <!-- /ko -->
+<!-- /ko -->
 <!-- ko if: addCode -->
     <br/>
     <div class='game-saveCode-newLabelWidth'>Description: </div>
@@ -12,17 +35,4 @@
     
     <div class='button game-saveCode-saveButton' data-bind='click: saveCode'>Save</div>
     <br/>
-<!-- /ko -->
-<!-- ko if: isSelected -->
-    <!-- ko ifnot: isLoading -->
-        <!-- ko foreach: items -->
-            <br/>
-            <div class='game-code-description'>
-                <div class='game-code-content' data-bind='text: description'></div>
-            </div>
-            <div class='game-code-description'>
-                <div class='game-code-content' data-bind='text: code, click: selectCode, attr: {id: id}'></div>
-            </div>
-        <!-- /ko -->
-    <!-- /ko -->
 <!-- /ko -->

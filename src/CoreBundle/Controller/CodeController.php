@@ -2,11 +2,12 @@
 
 namespace CoreBundle\Controller;
 
-use CoreBundle\Entity\Game;
+use CoreBundle\Entity\Code;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class CodeController extends BaseController {
     
@@ -23,7 +24,7 @@ class CodeController extends BaseController {
         }
         
         $game = $this->em->getRepository('CoreBundle:Game')->find($data['gameId']);
-        $code = new \CoreBundle\Entity\Code();
+        $code = new Code();
         $code->setDescription($data['description']);
         $code->setCode($data['code']);
         $code->setGameId($game->getId());
@@ -44,5 +45,27 @@ class CodeController extends BaseController {
         $codeRepo = $this->em->getRepository('CoreBundle:Code');
         $data = $codeRepo->getAllCodesByGame($gameId);
         return new JsonResponse($data);
+    }
+    
+    /**
+     * 
+     * @param Request $request
+     * @param String $codeId
+     */
+    public function changeAction(Request $request, $codeId) {
+        $userId = $this->requireAuthentificatedUser($request);
+        $requestData = $this->getParsedRequestContent($request);
+        $code = $this->em->getRepository('CoreBundle:Code')->find($codeId);
+        if(!$code || $code->getGame()->getUser()->getId() !== $userId) {
+            throw new NotFoundHttpException('Code doesnt exists');
+        }
+        if(strlen($requestData['description']) === 0) {
+            $this->em->remove($code);
+        } else {
+            $code->setDescription($requestData['description']);
+            $code->setCode($requestData['code']);
+        }
+        $this->em->flush();
+        return new JsonResponse(null, 204);
     }
 }
