@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class GameController extends BaseController {
     
@@ -49,5 +50,16 @@ class GameController extends BaseController {
         $gameRepo = $this->em->getRepository('CoreBundle:Game');
         $data = $gameRepo->getAllGamesByUserId($userId);
         return new JsonResponse($data);
+    }
+    
+    public function deleteAction(Request $request, $gameId) {
+        $userId = $this->requireAuthentificatedUser($request);
+        $game = $this->em->getRepository('CoreBundle:Game')->find($gameId);
+        if($userId !== $game->getUserId()) {
+            throw new NotFoundHttpException('Not allowed to delete game');
+        }
+        $this->em->remove($game);
+        $this->em->flush();
+        return new JsonResponse(null, 204);
     }
 }

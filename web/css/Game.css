@@ -1,5 +1,6 @@
 .game-area {
     height: 70%;
+    overflow-y: scroll;
 }
 
 .game-additionalControlls {

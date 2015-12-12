@@ -138,4 +138,50 @@ class User
     {
         return $this->timestamp;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $game;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->game = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add game
+     *
+     * @param \CoreBundle\Entity\Game $game
+     *
+     * @return User
+     */
+    public function addGame(\CoreBundle\Entity\Game $game)
+    {
+        $this->game[] = $game;
+
+        return $this;
+    }
+
+    /**
+     * Remove game
+     *
+     * @param \CoreBundle\Entity\Game $game
+     */
+    public function removeGame(\CoreBundle\Entity\Game $game)
+    {
+        $this->game->removeElement($game);
+    }
+
+    /**
+     * Get game
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGame()
+    {
+        return $this->game;
+    }
 }

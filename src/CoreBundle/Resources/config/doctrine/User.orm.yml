@@ -40,4 +40,9 @@ CoreBundle\Entity\User:
         timestamp:
             type: datetime
             nullable: true
+    oneToMany:
+        game:
+            targetEntity: Game
+            onDelete: CASCADE
+            mappedBy: user
     lifecycleCallbacks: {  }

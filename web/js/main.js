@@ -12,8 +12,24 @@ define('main', [
     'Tasks/MenuHandler', 
     'Utils/Routing',
     'Utils/EventManager',
-    'Manager/DialogManager'
+    'Manager/DialogManager',
+    'Utils/BindingHandlers'
 ], function(ko, MenuViewModel, Routing, EventManager, DialogManager) {
+    /**
+     * RETURN key binding for Knockout.js
+     */
+    ko.bindingHandlers.returnKey = {
+        init: function (element, valueAccessor, allBindingsAccessor, viewModel) {
+            debugger;
+            ko.utils.registerEventHandler(element, 'keydown', function (evt) {
+                if (evt.keyCode === 13) {
+                    evt.preventDefault();
+                    evt.target.blur();
+                    valueAccessor().call(viewModel);
+                }
+            });
+        }
+    };
     
     /**
      * Handles the main models ( menu, main content )

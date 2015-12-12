@@ -38,4 +38,5 @@ CoreBundle\Entity\Code:
     manyToOne:
         game:
             targetEntity: Game
+            inversedBy: code
     lifecycleCallbacks: {  }

@@ -69,6 +69,10 @@ define('Tasks/Game/Game', ['knockout', 'Utils/Network', 'Utils/EventManager', 'T
                 self.items(items);
                 self.isLoading(false);
             });
+        },
+        
+        removeGame: function() {
+            EventManager.trigger('openDialog', {templateId: 'dialog-remove-game-template', options: this.gameId});
         }
     };
     

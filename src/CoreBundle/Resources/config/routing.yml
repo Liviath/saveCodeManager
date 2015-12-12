@@ -31,6 +31,11 @@ postGame:
     defaults: { _controller: CoreBundle:Game:post }
     methods: [POST]
     
+deleteGame:
+    path:     /deleteGame/{gameId}
+    defaults: { _controller: CoreBundle:Game:delete }
+    methods: [POST]
+    
 getGames:
     path:     /game/all
     defaults: { _controller: CoreBundle:Game:get }

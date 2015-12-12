@@ -38,4 +38,13 @@ CoreBundle\Entity\Game:
     manyToOne:
         user:
             targetEntity: User
+    oneToMany:
+        code:
+            targetEntity: Code
+            onDelete: CASCADE
+            mappedBy: game
+    manyToOne:
+        user:
+            targetEntity: User
+            inversedBy: game
     lifecycleCallbacks: {  }

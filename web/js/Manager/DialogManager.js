@@ -9,8 +9,10 @@ define('Manager/DialogManager', [
         this.dialogTemplateId = ko.observable('');
         this.dialogViewModel = ko.observable({});
         
-        EventManager.subscribe('openDialog', 'manager', function(templateId) {
-           this.openDialogByTemplateId(templateId);
+        EventManager.subscribe('openDialog', 'manager', function(params) {
+            var templateId = typeof params === 'object' ? params.templateId : params;
+            var options = typeof params === 'object' ? params.options : null;
+            this.openDialogByTemplateId(templateId, options);
         }.bind(this));
         
         EventManager.subscribe('closeDialog', 'manager', function() {
@@ -25,10 +27,14 @@ define('Manager/DialogManager', [
         /**
          * Opens a dialog by a given template identifier.
          * @param {String} templateId
+         * @parma {Object} options
          */
-        openDialogByTemplateId: function(templateId) {
+        openDialogByTemplateId: function(templateId, options) {
             var self = this;
             Routing.getModuleByTemplateId(templateId, function(viewModel) {
+                if(typeof viewModel.init === 'function') {
+                    viewModel.init(options);
+                }
                 self.dialogViewModel(viewModel);
                 self.dialogTemplateId(templateId);
                 self.isOpened(true);

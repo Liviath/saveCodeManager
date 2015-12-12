@@ -16,3 +16,6 @@ gameOverview:
 addGameDialog:
     viewModel: 'Dialogs/Game/AddGame'
     templateId: 'dialog-add-game-template'
+removeGameDialog:
+    viewModel: 'Dialogs/Game/RemoveGame'
+    templateId: 'dialog-remove-game-template'

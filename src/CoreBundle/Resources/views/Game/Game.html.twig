@@ -1,6 +1,7 @@
 <div class='game-listEntry' data-bind="text: name, css: {'game-listEntry--selected': isSelected}, click: select">
 </div>
 <div class='button game-listEntry-addButton' data-bind='click: toggleAddCode'>add</div>
+<div class='button game-listEntry-addButton' data-bind='click: removeGame'>remove game</div>
 <!-- ko if: isSelected -->
     <!-- ko ifnot: isLoading -->
         <!-- ko foreach: items -->

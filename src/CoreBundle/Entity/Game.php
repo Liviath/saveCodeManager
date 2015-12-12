@@ -138,4 +138,50 @@ class Game
     {
         return $this->user;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $code;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->code = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add code
+     *
+     * @param \CoreBundle\Entity\Code $code
+     *
+     * @return Game
+     */
+    public function addCode(\CoreBundle\Entity\Code $code)
+    {
+        $this->code[] = $code;
+
+        return $this;
+    }
+
+    /**
+     * Remove code
+     *
+     * @param \CoreBundle\Entity\Code $code
+     */
+    public function removeCode(\CoreBundle\Entity\Code $code)
+    {
+        $this->code->removeElement($code);
+    }
+
+    /**
+     * Get code
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
 }
