@@ -3,7 +3,7 @@ define('Tasks/Game/Game', ['knockout', 'Utils/Network', 'Utils/EventManager', 'T
     var Game = function(data) {
         this.name = data.name;
         this.amountOfSaveCodes = data['amount_of_save_codes'];
-        this.isSelected = ko.observable(true);
+        this.isSelected = ko.observable(false);
         this.newDescription = ko.observable('');
         this.newCode = ko.observable('');
         this.addCode = ko.observable(false);
