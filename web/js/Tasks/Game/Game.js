@@ -63,7 +63,7 @@ define('Tasks/Game/Game', ['knockout', 'Utils/Network', 'Utils/EventManager', 'T
                 var items = [];
                 for(var item in data) {
                     if(data.hasOwnProperty(item)) {
-                        items.push(new Code(data[item]));
+                        items.push(new Code(data[item], self));
                     }
                 }
                 self.items(items);

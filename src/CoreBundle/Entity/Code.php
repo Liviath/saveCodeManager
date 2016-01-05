@@ -225,4 +225,33 @@ class Code
     {
         return $this->code;
     }
+    /**
+     * @var integer
+     */
+    private $orderVal;
+
+
+    /**
+     * Set orderVal
+     *
+     * @param integer $orderVal
+     *
+     * @return Code
+     */
+    public function setOrderVal($orderVal)
+    {
+        $this->orderVal = $orderVal;
+
+        return $this;
+    }
+
+    /**
+     * Get orderVal
+     *
+     * @return integer
+     */
+    public function getOrderVal()
+    {
+        return $this->orderVal;
+    }
 }

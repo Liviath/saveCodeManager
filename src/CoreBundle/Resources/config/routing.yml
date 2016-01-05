@@ -51,6 +51,11 @@ postCodes:
     defaults: { _controller: CoreBundle:Code:post }
     methods: [POST]
     
+moveCode:
+    path:     /code/move/{codeId}
+    defaults: { _controller: CoreBundle:Code:move }
+    methods: [POST]
+    
 changeCode:
     path:    /code/{codeId}
     defaults: { _controller: CoreBundle:Code:change }

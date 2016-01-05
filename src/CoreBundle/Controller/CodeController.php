@@ -23,12 +23,15 @@ class CodeController extends BaseController {
             throw new BadRequestHttpException('The length of the code is less then 2');
         }
         
+        $codeRepo = $this->em->getRepository('CoreBundle:Code');
         $game = $this->em->getRepository('CoreBundle:Game')->find($data['gameId']);
         $code = new Code();
+        $orderVal = $codeRepo->getLastOrderValByGame($game->getId()) + 1;
         $code->setDescription($data['description']);
         $code->setCode($data['code']);
         $code->setGameId($game->getId());
         $code->setGame($game);
+        $code->setOrderVal($orderVal);
         $this->em->persist($code);
         $this->em->flush();
         
@@ -66,6 +69,26 @@ class CodeController extends BaseController {
             $code->setCode($requestData['code']);
         }
         $this->em->flush();
+        return new JsonResponse(null, 204);
+    }
+    
+    /**
+     * 
+     * @param Request $request
+     * @param String $codeId
+     */
+    public function moveAction(Request $request, $codeId) {
+        $userId = $this->requireAuthentificatedUser($request);
+        $codeRepo = $this->em->getRepository('CoreBundle:Code');
+        $code = $codeRepo->find($codeId);
+        if(!$code || $code->getGame()->getUser()->getId() !== $userId) {
+            throw new NotFoundHttpException('Code doesnt exists');
+        }
+        
+        $orderVal = $code->getOrderVal();
+        if ($orderVal > 1) {
+            $codeRepo->moveUp($code->getOrderVal());
+        }
         return new JsonResponse(null, 204);
     }
 }

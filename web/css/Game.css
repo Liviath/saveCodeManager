@@ -13,7 +13,7 @@
     border-radius: 1px;
     border-style: solid;
     border-color: grey;
-    width: 50%;
+    width: 750px;
     cursor: pointer;
     margin-top: 0px;
     margin-bottom: 5px;
@@ -71,7 +71,6 @@
     border-radius: 1px;
     border-style: solid;
     border-color: grey;
-    width: 24.7%;
     cursor: pointer;
     margin-top: 0px;
     margin-bottom: 1px;
@@ -81,8 +80,25 @@
     background-color: white;
 }
 
-.game-code-description-edit {
-    width: 25%;
+.game-code-description--small {
+    width: 238px;
+}
+
+.game-code-description--big {
+    width: 476px;
+}
+
+.game-code-move-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.game-code-description-edit-big {
+    width: 500px;
+}
+.game-code-description-edit-small {
+    width: 248px;
 }
 
 .game-code-content {

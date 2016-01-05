@@ -8,17 +8,18 @@
             <!-- ko if: visible -->
                 <br/>
                 <!-- ko ifnot: isEditMode -->
-                    <div class='game-code-description'>
+                    <div class='game-code-description game-code-description--small'>
                         <div class='game-code-content' data-bind='text: description'></div>
                     </div>
-                    <div class='game-code-description' data-bind="click: selectCode">
+                    <div class='game-code-description game-code-description--big' data-bind="click: selectCode">
                         <div class='game-code-content u-selectable' data-bind='text: code, attr: {id: id}'></div>
                     </div>
+                    <div class="game-code-move-icon u-inline-block" data-bind="click: move"></div>
                     <div class='button game-listEntry-addButton' data-bind='click: edit'>edit</div>
                 <!-- /ko -->
                 <!-- ko if: isEditMode -->
-                    <input class='game-code-description-edit' data-bind='value: description'/>
-                    <input class='game-code-description-edit' data-bind='value: code'/>
+                    <input class='game-code-description-edit-small' data-bind='value: description'/>
+                    <input class='game-code-description-edit-big' data-bind='value: code'/>
                     <div class='button game-listEntry-addButton' data-bind='click: save'>save</div>
                 <!-- /ko -->
             <!-- /ko -->

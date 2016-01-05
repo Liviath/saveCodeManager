@@ -35,6 +35,13 @@ CoreBundle\Entity\Code:
             name: code
             options:
                 fixed: false
+        orderVal:
+            type: integer
+            nullable: true
+            name: order_val
+            options:
+                unsigned: true
+                default: null
     manyToOne:
         game:
             targetEntity: Game

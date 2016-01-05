@@ -17,10 +17,48 @@ class Code extends \Doctrine\ORM\EntityRepository {
     public function getAllCodesByGame($gameId) {
         $stmt = 'SELECT c.id, c.description, c.code
                    FROM codes c
-                  WHERE c.game_id = :gameId';
+                  WHERE c.game_id = :gameId
+               ORDER BY c.order_val ASC';
         $params = [
             'gameId' => $gameId
         ];
         return $this->_em->getConnection()->executeQuery($stmt, $params)->fetchAll(\PDO::FETCH_ASSOC);
+    }
+    
+    /**
+     * Gets the highest order value of a game by a game id
+     * 
+     * @param integer $gameId
+     */
+    public function getLastOrderValByGame($gameId) {
+        $stmt = 'SELECT c.order_val
+                   FROM codes c
+                  WHERE c.game_id = :gameId
+               ORDER BY c.order_val DESC
+                  LIMIT 1';
+        $params = [
+            'gameId' => $gameId
+        ];
+        
+        return $this->_em->getConnection()->executeQuery($stmt, $params)->fetch(\PDO::FETCH_COLUMN);
+    }
+    
+    /**
+     * Moves an entry up
+     * @param integer $orderVal
+     */
+    public function moveUp($orderVal) {
+        $stmt = 'UPDATE codes c
+                    SET c.order_val = CASE
+                                        WHEN c.order_val = :orderVal - 1 THEN :orderVal
+                                        WHEN c.order_val = :orderVal THEN :orderVal - 1
+                                        ELSE c.order_val
+                                    END
+                 WHERE c.order_val = :orderVal
+                    OR c.order_val = :orderVal - 1';
+        $params = [
+            'orderVal' => $orderVal
+        ];
+        $this->_em->getConnection()->executeQuery($stmt, $params);
     }
 }

@@ -5,10 +5,10 @@ define('Tasks/Game/Code', ['knockout', 'Utils/Network'], function(ko, Network) {
      * @param {String} element
      */
     function SelectText(element) {
-        var doc = document
-            , text = doc.getElementById(element)
-            , range, selection
-        ;    
+        var doc = document, 
+            text = doc.getElementById(element), 
+            range, 
+            selection;    
         if (doc.body.createTextRange) {
             range = document.body.createTextRange();
             range.moveToElementText(text);
@@ -26,12 +26,13 @@ define('Tasks/Game/Code', ['knockout', 'Utils/Network'], function(ko, Network) {
      * Construktor
      * @param {Object} data
      */
-    var Code = function(data) {
+    var Code = function(data, parent) {
         this.description = ko.observable(data.description);
         this.code = ko.observable(data.code);
         this.id = data.id;
         this.isEditMode = ko.observable(false);
         this.visible = ko.observable(true);
+        this.parent = parent;
     };
     
     Code.prototype = {   
@@ -71,6 +72,18 @@ define('Tasks/Game/Code', ['knockout', 'Utils/Network'], function(ko, Network) {
                 if(data.description.length === 0) {
                     self.visible(false);
                 }
+            });
+        },
+        
+        /**
+         * Moves a code up
+         */
+        move: function() {
+            var uri = 'code/move/' + this.id;
+            
+            var self = this;
+            Network.postRequest(uri, {}, function() {
+                self.parent.refresh();
             });
         }
     };
