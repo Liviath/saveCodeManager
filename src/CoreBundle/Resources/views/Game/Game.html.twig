@@ -14,7 +14,11 @@
                     <div class='game-code-description game-code-description--big' data-bind="click: selectCode">
                         <div class='game-code-content u-selectable' data-bind='text: code, attr: {id: id}'></div>
                     </div>
-                    <div class="game-code-move-icon u-inline-block" data-bind="click: move"></div>
+                <span>
+                    {% image '@CoreBundle/Resources/public/images/arow_up.png' %}
+                        <img class="game-code-move-icon" src="{{ asset_url }}" alt="Example"  data-bind="click: move" />
+                    {% endimage %}
+                </span>
                     <div class='button game-listEntry-addButton' data-bind='click: edit'>edit</div>
                 <!-- /ko -->
                 <!-- ko if: isEditMode -->
