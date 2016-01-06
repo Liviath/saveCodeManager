@@ -3,23 +3,52 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/var/www/html/saveCodeManager/.htaccess</file>
+            <file>file:/var/www/html/saveCodeManager/web/.htaccess</file>
             <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/config/doctrine/User.orm.yml</file>
-            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/config/services.yml</file>
+            <file>file:/var/www/html/saveCodeManager/web/js/Tasks/Game/Game.js</file>
             <file>file:/var/www/html/saveCodeManager/web/css/Globals.css</file>
+            <file>file:/var/www/html/saveCodeManager/web/js/Tasks/Game/Code.js</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Entity/Code.php</file>
+            <file>file:/var/www/html/saveCodeManager/web/js/Manager/DialogManager.js</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Generator/Password.php</file>
+            <file>file:/var/www/html/saveCodeManager/web/js/Utils/BindingHandlers.js</file>
+            <file>file:/var/www/html/saveCodeManager/web/js/Tasks/Game/GameOverview.js</file>
+            <file>file:/var/www/html/saveCodeManager/app/config/parameters.yml.dist</file>
+            <file>file:/var/www/html/saveCodeManager/app/DoctrineMigrations/Version20160105220126.php</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/views/default/dialog.html.twig</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/config/requirejs.yml</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Generator/Hash.php</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/views/Game/Game.html.twig</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Repository/Code.php</file>
+            <file>file:/var/www/html/saveCodeManager/web/js/Utils/Routing.js</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/config/doctrine/Code.orm.yml</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/views/Dialogs/RemoveGame.html.twig</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Controller/BaseController.php</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/public/images/arow_up.png</file>
+            <file>file:/var/www/html/saveCodeManager/web/js/main.js</file>
+            <file>file:/var/www/html/saveCodeManager/app/config/parameters.yml</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/config/services.yml</file>
             <file>file:/var/www/html/saveCodeManager/web/js/Tasks/Register.js</file>
             <file>file:/var/www/html/saveCodeManager/web/css/Register.css</file>
-            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Generator/Password.php</file>
+            <file>file:/var/www/html/saveCodeManager/web/js/Dialogs/Game/RemoveGame.js</file>
             <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Controller/UserController.php</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/views/AccountActions/Login.html.twig</file>
             <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Entity/User.php</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/config/doctrine/Game.orm.yml</file>
+            <file>file:/var/www/html/saveCodeManager/web/app.php</file>
+            <file>file:/var/www/html/saveCodeManager/app/AppKernel.php</file>
             <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/views/default/index.html.twig</file>
             <file>file:/var/www/html/saveCodeManager/web/js/Utils/Network.js</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/views/default/Home.html.twig</file>
             <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/config/routing.yml</file>
-            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Generator/Hash.php</file>
+            <file>file:/var/www/html/saveCodeManager/web/js/Tasks/Login.js</file>
             <file>file:/var/www/html/saveCodeManager/web/css/Reset.css</file>
-            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/views/default/Register.html.twig</file>
-            <file>file:/var/www/html/saveCodeManager/web/js/Utils/Routing.js</file>
-            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Controller/BaseController.php</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Controller/CodeController.php</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Resources/views/Dialogs/Includes.html.twig</file>
+            <file>file:/var/www/html/saveCodeManager/web/css/Game.css</file>
             <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Controller/ConfigController.php</file>
+            <file>file:/var/www/html/saveCodeManager/src/CoreBundle/Controller/GameController.php</file>
             <file>file:/var/www/html/saveCodeManager/web/css/Utils.css</file>
         </group>
     </open-files>

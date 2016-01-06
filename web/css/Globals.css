@@ -14,3 +14,9 @@
     cursor: pointer;
     text-align: center;
 }
+
+.link {
+    color: #0095dd;
+    cursor: pointer;
+    text-decoration: underline;
+}

@@ -10,12 +10,25 @@ home:
 logout:
     viewModel: 'Tasks/Logout'
     templateId: 'logout-template'
+accountSettings:
+    viewModel: 'Tasks/Account/General'
+    templateId: 'account-template'
 gameOverview:
     viewModel: 'Tasks/Game/GameOverview'
     templateId: 'game-overview-template'
 addGameDialog:
     viewModel: 'Dialogs/Game/AddGame'
     templateId: 'dialog-add-game-template'
+    size: 's'
 removeGameDialog:
     viewModel: 'Dialogs/Game/RemoveGame'
     templateId: 'dialog-remove-game-template'
+    size: 's'
+changePassword:
+    viewModel: 'Dialogs/Account/ChangePassword'
+    templateId: 'dialog-change-password-template'
+    size: 'fullscreen'
+deleteAccount:
+    viewModel: 'Dialogs/Account/DeleteAccount'
+    templateId: 'dialog-delete-account-template'
+    size: 'fullscreen'

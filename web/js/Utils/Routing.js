@@ -13,6 +13,7 @@ define('Utils/Routing', ['Utils/Network', 'Utils/EventManager'], function(Networ
      * @param {Callable} callback
      */
     function getModuleByTemplateId(templateId, callback) {
+        debugger;
         if(modules[templateId]) {
             callback(new modules[templateId]());
         } else {
@@ -32,15 +33,20 @@ define('Utils/Routing', ['Utils/Network', 'Utils/EventManager'], function(Networ
      * @returns {data.viewModel|Boolean}
      */
     function getViewModelByTemplateId(templateId) {
-        var viewModel = false;
+        var moduleCfg = getModuleConfigByTemplateId(templateId);
+        return moduleCfg.viewModel;
+    }
+    
+    function getModuleConfigByTemplateId(templateId) {
+        var moduleCfg = false;
         for(var route in moduleConfig) {
             if(moduleConfig.hasOwnProperty(route)) {
                 if(moduleConfig[route].templateId === templateId) {
-                    viewModel = moduleConfig[route].viewModel;
+                    moduleCfg = moduleConfig[route];
                 }
             }
         }
-        return viewModel;
+        return moduleCfg;
     }
     
     /**
@@ -66,6 +72,7 @@ define('Utils/Routing', ['Utils/Network', 'Utils/EventManager'], function(Networ
     }
     
     return {
-        getModuleByTemplateId: getModuleByTemplateId
+        getModuleByTemplateId: getModuleByTemplateId,
+        getModuleConfigByTemplateId: getModuleConfigByTemplateId
     };
 });

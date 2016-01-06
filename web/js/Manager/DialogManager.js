@@ -1,13 +1,18 @@
 define('Manager/DialogManager', [
     'knockout',
     'Utils/Routing',
-    'Utils/EventManager'
-], function(ko, Routing, EventManager) {
+    'Utils/EventManager',
+    'jquery'
+], function(ko, Routing, EventManager, $) {
     
     var DialogManager = function() { 
         this.isOpened = ko.observable(false);;
         this.dialogTemplateId = ko.observable('');
         this.dialogViewModel = ko.observable({});
+        this.dialogSize = ko.pureComputed(function() {
+            return 'dialog--' + this.dialogSizeCfg();
+        }, this);
+        this.dialogSizeCfg = ko.observable('small');
         
         EventManager.subscribe('openDialog', 'manager', function(params) {
             var templateId = typeof params === 'object' ? params.templateId : params;
@@ -35,14 +40,22 @@ define('Manager/DialogManager', [
                 if(typeof viewModel.init === 'function') {
                     viewModel.init(options);
                 }
+                var dialogCfg = Routing.getModuleConfigByTemplateId(templateId);
+                self.dialogSizeCfg(dialogCfg.size);
                 self.dialogViewModel(viewModel);
                 self.dialogTemplateId(templateId);
                 self.isOpened(true);
+                $(".dialog-overlay").hide(0);
+                $(".dialog-overlay").fadeIn(400);
             });
         },
         
         closeDialog: function() {
-            this.isOpened(false);
+            $(".dialog-overlay").fadeOut(400);
+            var self = this;
+            setTimeout(function() {
+                self.isOpened(false);
+            }, 400);
         }
     };
     

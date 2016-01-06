@@ -49,6 +49,7 @@ define('Tasks/MenuHandler', ['knockout', 'Utils/Security', 'Utils/EventManager']
                     self.menuEntries = [
                         new menuEntry('Home', 'home-template'),
                         new menuEntry('Games', 'game-overview-template'),
+                        new menuEntry('Account', 'account-template'),
                         new menuEntry('Logout', 'logout-template')
                     ];
                 }
